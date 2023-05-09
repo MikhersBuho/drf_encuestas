@@ -24,9 +24,9 @@ class UserList(viewsets.ModelViewSet):
 class CompanyList(viewsets.ModelViewSet):
     queryset = company.objects.all()
     permission_classes = [permissions.AllowAny]
-    serializer_class = DomainSerializer
+    serializer_class = CompanySerializer
 
 class DomainList(viewsets.ModelViewSet):
     queryset = domain.objects.all()
     permission_classes = [permissions.AllowAny]
-    serializer_class = CompanySerializer
+    serializer_class = DomainSerializer
