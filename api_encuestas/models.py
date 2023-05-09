@@ -8,15 +8,15 @@ from django.db import models
 class company(models.Model):
     name= models.CharField(max_length=100)
     is_active= models.BooleanField(default=True)
-    create_at= models.DateTimeField(auto_now_add=True)
-    delete_at= models.DateTimeField(default=False)
+    create_at= models.DateTimeField(null=True, auto_now_add=True)
+    delete_at= models.DateTimeField(null=True)
 
 class domain(models.Model):
     name = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
     id_company = models.ForeignKey(company, on_delete=models.CASCADE, related_name='fk_id_company_domain')
-    create_at= models.DateTimeField(auto_now_add=True)
-    delete_at= models.DateTimeField(default=False)
+    create_at= models.DateTimeField(null=True, auto_now_add=True)
+    delete_at= models.DateTimeField(null=True)
 
 
 # class poll(models.Model):
