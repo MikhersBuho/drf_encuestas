@@ -30,7 +30,7 @@ SECRET_KEY = env.str('SECRET_KEY')
 #si existe la variable 'render' DEBUG estara en False
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS', default=[]))
+ALLOWED_HOSTS = []
 
 #Añade la url de render a 'ALLOWED_HOSTS'
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
